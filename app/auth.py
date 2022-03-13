@@ -77,6 +77,6 @@ def register():
 
             login_user(user, remember=bool(request.form.get("remember")))
             flash("Account created!", category="success")
-            return redirect(url_for("user.index"))
+            return redirect(url_for("user.notes"))
 
     return render_template("register.html")
