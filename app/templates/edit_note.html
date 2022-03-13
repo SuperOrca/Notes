@@ -1,0 +1,69 @@
+{% extends "base.html" %} {% block title %}New Item{% endblock %} {% block style
+%}
+<style>
+  .form-body {
+    height: 100%;
+  }
+
+  .form-body {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .form-new-note {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
+
+  .form-new-note .checkbox {
+    font-weight: 400;
+  }
+
+  .form-new-note .form-floating:focus-within {
+    z-index: 2;
+  }
+
+  .form-new-note input[name="name"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+</style>
+{% endblock %} {% block content %}
+<div class="text-center form-body">
+  <main class="form-new-note">
+    <form method="POST">
+      <h1 class="h3 mb-3 fw-normal">Edit Note</h1>
+      <div class="form-floating">
+        <input
+          type="text"
+          name="name"
+          class="form-control"
+          id="floatingInput"
+          placeholder="Name"
+        />
+        <label for="floatingInput">Name</label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+    </form>
+  </main>
+</div>
+{% endblock %}

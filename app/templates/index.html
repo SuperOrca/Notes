@@ -1,0 +1,55 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block style %}
+<style>
+  .b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: solid rgba(0, 0, 0, 0.15);
+    border-width: 1px 0;
+    box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+      inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+  }
+
+  @media (min-width: 992px) {
+    .rounded-lg-3 {
+      border-radius: 0.3rem;
+    }
+  }
+
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+</style>
+{% endblock %} {% block content %}
+<div class="px-4 py-5 my-5 text-center">
+  <!-- TODO image for home page -->
+  <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+  <h1 class="display-5 fw-bold">A simple way to manage your tasks.</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">
+      Quickly design and customize responsive mobile-first sites with Bootstrap,
+      the world’s most popular front-end open source toolkit, featuring Sass
+      variables and mixins, responsive grid system, extensive prebuilt
+      components, and powerful JavaScript plugins.
+    </p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <a
+        type="button"
+        class="btn btn-primary btn-lg px-4 gap-3"
+        href="{{ url_for('auth.register') }}"
+      >
+        Register
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block title %}{{ note.name }}{% endblock %} {% block content
+    %}
+    <div class="container">
+      <div class="row">
+        <div class="text-end" style="padding-bottom: 10px">
+          <a
+            type="button"
+            class="btn btn-primary"
+            href="{{ url_for('user.new_item', note_id=note.id) }}"
+            >+ New Item</a
+          >
+        </div>
+        <ul class="list-group">
+          {% for item in note.items %}
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center"
+          >
+            <p class="px-2">{{ item.content }}</a>
+            <div class="col-md-3 text-end">
+              <a
+                type="button"
+                class="btn btn-secondary me-2"
+                href="{{ url_for('user.edit_item', note_id=note.id, item_id=item.id) }}"
+                >Edit</a
+              >
+              <a
+                type="button"
+                class="btn btn-danger"
+                onClick="deleteItem({{ note.id }}, {{ item.id }})"
+                >Delete</a
+              >
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    {% endblock %}
+    
