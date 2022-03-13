@@ -109,7 +109,7 @@ def edit_item(note_id, item_id):
 
         return redirect(url_for("user.items", note_id=note_id))
 
-    return render_template("edit_item.html")
+    return render_template("edit_item.html", item=Item.query.get(item_id))
 
 
 @user.route("/notes/new", methods=["GET", "POST"])
@@ -175,4 +175,4 @@ def edit_note(note_id):
 
         return redirect(url_for("user.notes"))
 
-    return render_template("edit_note.html")
+    return render_template("edit_note.html", note=Note.query.get(note_id))
